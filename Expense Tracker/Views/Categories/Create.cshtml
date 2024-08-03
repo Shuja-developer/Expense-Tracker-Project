@@ -1,0 +1,54 @@
+﻿@model Expense_Tracker.Models.Category
+
+@{
+    ViewData["PageTitle"] = "";
+}
+
+
+<h2 class="fst-italic">Create new Category</h2>
+
+<hr />
+<div class="row">
+    <div class="col-md-7">
+        <div class="e-card bg-dark h-100 d-flex" style="background-color:#212b36">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+       
+            <div class="mb-3">
+                <ejs-textbox id="Title" placeholder="Title" ejs-for="@Model.Title" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <ejs-textbox id="icon" placeholder="Icon" ejs-for="@Model.Icon" floatLabelType="Always"></ejs-textbox>
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <input type="radio" id="radioleft" name="Type" value="Expense" />
+                <label class="e-btn" for="radioleft">Expense</label>
+                <input type="radio" id="radiomiddle" name="Type" value="Income" />
+                <label class="e-btn" for="radiomiddle">Income</label>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3">
+                <input type="submit" value="Save" class="btn btn-outline-primary" />
+               
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="col-5">
+
+        <div class="e-card bg-dark h-100 d-flex justify-content-center align-items-center" style="background-color:#212b36">
+
+            <i class="fa-solid fa-shapes fa-6x"></i>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,0 +1,55 @@
+﻿@model Expense_Tracker.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit Category</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-7">
+        <div class="wedget p-5 h-100 d-flex" style="background-color:#212b36">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CategoryId" />
+            <div class=" form-group mt-3">
+                <label asp-for="Title" class="control-label">Enter Title</label>
+                    <i class="fa-solid fa-prescription-bottle-medical"></i>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+                <div class="form-group mt-3">
+                <label asp-for="Icon" class="control-label text-opacity-100">Enter Icon</label>
+                    <i class="fa-solid fa-icons"></i>
+                <input asp-for="Icon" class="form-control" />
+                <span asp-validation-for="Icon" class="text-danger"></span>
+            </div>
+                <div class="form-group mt-3">
+                <input type="radio" id="radioleft" name="Type" value="Expense" />
+                <label class="e-btn" for="radioleft">Expense</label>
+                <input type="radio" id="radiomiddle" name="Type" value="Income" />
+                <label class="e-btn" for="radiomiddle">Income</label>
+                <span asp-validation-for="Type" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 ">
+                <input type="submit" value="Save" class="btn btn-outline-info" />
+               
+            </div>
+        </form>
+        </div>
+    </div>
+    <div class="col-md-5">
+
+        <div class="widget h-100 d-flex justify-content-center align-items-center" style="background-color:#212b36">
+
+            <i class="fa-solid fa-money-bill-transfer fa-6x"></i>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

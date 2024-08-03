@@ -1,0 +1,49 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+  background-color:#12161d;
+  color:#fff;
+}
+.e-bigger {
+    font-size: x-large;
+}
+.btn:focus, .btn:active{
+    outline:none !important;
+    box-shadow:none;
+}
+.no-a-decoration, .no-a-decoration:hover{
+    text-decoration:none;
+    color:inherit;
+}
+.e-breadcrumb a, .e-breadcrumb a:hover{
+    text-decoration:none !important;
+    color:inherit !important;
+}
+.e-grid {
+    border: 0;
+    border-radius: 5px;
+}
+.form-group{
+    margin-left:8px;
+    margin-right:8px;
+    font-size:large;
+
+}
+.fa{
+    font-size:larger;
+}
+
